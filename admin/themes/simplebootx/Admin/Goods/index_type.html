@@ -3,8 +3,8 @@
 <body>
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="{:U('Goods/index')}">{:L('ADMIN_GOODS_MANAGE')}</a></li>
-			<li><a href="{:U('Goods/add')}">{:L('ADMIN_GOODS_ADD')}</a></li>
+			<li class="active"><a href="{:U('Goods/index_type')}">商品品类列表</a></li>
+			<li><a href="{:U('Goods/add_type')}">添加品类</a></li>
 		</ul>
 		<form class="well form-search" method="post" action="{:U('Goods/index')}">
 			商品分类： 
@@ -25,27 +25,17 @@
 					<tr>
 						<th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
 						<th width="100">ID</th>
-						<th width="100">商品名称</th>
-						<!-- <th>点击量</th> -->
-						<th width="80">类型 </th>
-						<th width="120"><span>单价</span></th>
-						<th width="120">限制数量</th>
-						<th width="120">状态</th>
+						<th width="100">商品分类名称</th>
 						<th width="120">操作</th>
 					</tr>
 				</thead>
-				<foreach name="goods_list" item="vo">
+				<foreach name="type_list" item="vo">
 				<tr>
 					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.id}"></td>
 					<td>{$vo.id}</td>
-					<td><a>{$vo.goods_name}</a></td>
-					<td>{$vo.goods_type_name}</td>
-					<!--  <td>0</td> -->
-					<td>{$vo.goods_price|bb_fen_to_yuan=###} 元</td>
-					<td>{$vo.goods_limit_num}</td>
-					<td><if condition="$vo.status eq 0"><a>售卖中<else /><a style="color:red">停售</if></a></td>
+					<td><a>{$vo.type_name}</a></td>
 					<td>
-						<a href="{:U('Goods/edit',array('goods_id'=>$vo['id']))}">编辑</a>|
+						<a href="{:U('Goods/edit_type',array('goods_id'=>$vo['id']))}">编辑</a>|
 						<if condition="$vo.status eq 0">
 						<a href="{:U('Goods/delete_goods',array('goods_id'=>$vo['id']))}" class="js-ajax-delete">停售</a>
 						<else />
@@ -58,12 +48,7 @@
 					<tr>
 						<th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
 						<th width="100">ID</th>
-						<th width="100">商品名称</th>
-						<!-- <th>点击量</th> -->
-						<th width="80">类型 </th>
-						<th width="120"><span>单价</span></th>
-						<th width="120">限制数量</th>
-						<th width="120">状态</th>
+						<th width="100">商品分类名称</th>
 						<th width="120">操作</th>
 					</tr>
 				</tfoot>

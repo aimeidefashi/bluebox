@@ -3,8 +3,8 @@
 <body>
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="{:U('Goods/index')}">{:L('ADMIN_GOODS_MANAGE')}</a></li>
-			<li><a href="{:U('Goods/add')}">{:L('ADMIN_GOODS_ADD')}</a></li>
+			<li class="active"><a href="{:U('Goods/index')}">商品列表</a></li>
+			<li><a href="{:U('Goods/add')}">添加商品</a></li>
 		</ul>
 		<form class="well form-search" method="post" action="{:U('Goods/index')}">
 			商品分类： 
@@ -47,9 +47,9 @@
 					<td>
 						<a href="{:U('Goods/edit',array('goods_id'=>$vo['id']))}">编辑</a>|
 						<if condition="$vo.status eq 0">
-						<a href="{:U('Goods/delete_goods',array('goods_id'=>$vo['id']))}" class="js-ajax-delete">停售</a>
+						<a href="{:U('Goods/change_goods_status',array('goods_id'=>$vo['id']))}" class="js-ajax-delete">停售</a>
 						<else />
-						<a href="{:U('Goods/delete_goods',array('goods_id'=>$vo['id'],'status'=>$vo['status']))}" class="js-ajax-delete">上架</a>
+						<a href="{:U('Goods/change_goods_status',array('goods_id'=>$vo['id'],'status'=>$vo['status']))}" class="js-ajax-delete">上架</a>
 						</if>
 					</td>
 				</tr>

@@ -6,6 +6,7 @@ use Common\Controller\AdminbaseController;
 class GoodsController extends AdminbaseController {
     
 	protected $goods_model;
+	protected $goods_type_model;
 	
 	function _initialize() {
 		parent::_initialize();
@@ -90,7 +91,7 @@ class GoodsController extends AdminbaseController {
 			 
 		}
 	}
-	public function delete_goods () {
+	public function change_goods_status () {
 		$status = I('get.status', 0);
 		$goods_id = I('get.goods_id');
 		$result = $this->goods_model->change_status($goods_id, $status);
@@ -102,8 +103,8 @@ class GoodsController extends AdminbaseController {
 	}
 
 	public function index_type(){
-		$goods_list = $this ->get_goods_type_list();
-		$this->assign("goods_list",$goods_list);
+		$type_list = $this -> goods_type_model -> get_goods_type_list();
+		$this->assign("type_list",$type_list);
 		$this ->display();
 	}
 

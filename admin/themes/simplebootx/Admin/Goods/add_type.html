@@ -17,47 +17,18 @@
 <body>
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
-			<li><a href="{:U('Goods/index')}">{:L('ADMIN_GOODS_MANAGE')}</a></li>
-			<li class="active"><a href="{:U('Goods/add',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">{:L('ADMIN_GOODS_ADD')}</a></li>
-		</ul>
-		<form action="{:U('Goods/add_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+			<li><a href="{:U('Goods/index_type')}">商品类目管理</a></li>
+			<li class="active"><a href="{:U('Goods/add_type')}" target="_self">添加类目</a></li>
+		</ul>-
+		<form action="{:U('Goods/add_type_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
 			<div class="row-fluid">
 				<div class="span9">
 					<table class="table table-bordered">
 						<tr>
-							<th width="80">商品分类</th>
+							<th>类目名称</th>
 							<td>
-								<select multiple="multiple" style="max-height: 100px;" name="post[goods_type]">{$taxonomys}</select>
-								<!-- <div>windows：按住 Ctrl 按钮来选择多个选项,Mac：按住 command 按钮来选择多个选项</div> -->
-							</td>
-						</tr>
-						<tr>
-							<th>名称</th>
-							<td>
-								<input type="text" style="width:400px;" name="post[goods_name]" id="title" required value="" placeholder="请输入商品名称"/>
+								<input type="text" style="width:400px;" name="post[type_name]" id="title" required value="" placeholder="请输入商品类目名称"/>
 								<span class="form-required">*</span>
-							</td>
-						</tr>
-						<tr>
-							<th>单价</th>
-							<td><input type="text" name="post[goods_price]" id="keywords" value="" style="width: 400px" placeholder="请输入关键字">单位元</td>
-						</tr>
-						<tr>
-							<th>限制数量</th>
-							<td><input type="number" name="post[goods_limit_num]" id="source" value="" style="width: 400px" placeholder="限制补货的最大数量"></td>
-						</tr>
-						<tr>
-							<th>状态</th>
-							<td>
-								<label class="radio"><input type="radio" name="post[goods_status]" value="1" checked>上架</label>
-								<label class="radio"><input type="radio" name="post[goods_status]" value="0">不显示</label>
-							</td>
-						</tr>
-						<tr>
-							<th>商品图</th>
-							<td>
-								<ul id="photos" class="pic-list unstyled"></ul>
-								<a href="javascript:upload_multi_image('图片上传','#photos','photos-item-wrapper');" class="btn btn-small">选择图片</a>
 							</td>
 						</tr>
 					</table>
@@ -66,7 +37,7 @@
 			</div>
 			<div class="form-actions">
 				<button class="btn btn-primary js-ajax-submit" type="submit">提交</button>
-				<a class="btn" href="{:U('AdminPost/index')}">返回</a>
+				<a class="btn" href="{:U('Goods/index_type')}">返回</a>
 			</div>
 		</form>
 	</div>
@@ -174,7 +145,7 @@
 					//验证未通过提示消息
 					messages : {
 						'post[goods_name]' : {
-							required : '请输入商品名称'
+							required : '请输入商品分类名称'
 						},
 						'post[goods_price]' : {
 							required : '请输入商品单价'
@@ -221,7 +192,7 @@
 											}, {
 												name : '返回列表页',
 												callback : function() {
-													location = "{:U('Goods/index')}";
+													location = "{:U('Goods/index_type')}";
 													return true;
 												}
 											} ]

@@ -17,8 +17,8 @@
 <body>
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
-			<li><a href="{:U('Goods/index')}">{:L('ADMIN_GOODS_MANAGE')}</a></li>
-			<li><a href="{:U('Goods/add',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">{:L('ADMIN_GOODS_ADD')}</a></li>
+			<li><a href="{:U('Goods/index')}">商品列表</a></li>
+			<li><a href="{:U('Goods/add',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">添加商品</a></li>
 			<li class="active"><a href="#">编辑商品</a></li>
 		</ul>
 		<form action="{:U('Goods/edit_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
