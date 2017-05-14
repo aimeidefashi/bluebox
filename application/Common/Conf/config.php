@@ -103,7 +103,7 @@ $configs= array(
             'APP_SECRET' => 'e506332ab51aac1a378772fbfc36febe',     //公众号secretkety           
             'MCH_ID'=>'1468612802',                                 //商户id
             'APP_KEY'=>'QApKTb1rJRwaJP92yWUGdA186WFQpZeg',          //商户key
-            'URL'=>'http://'. $_SERVER['HTTP_HOST'].'?g=Wxweb&m=Wechat&a=checkSignature',          //商户key
+            'URL'=>'http://'. $_SERVER['HTTP_HOST'].'/bluebox/index.php?g=Wxweb&m=Wechat&a=checkSignature',          //商户key
             'TOKEN'=>'QApKTb1rJRwaJP92yWUGdA186WFQpZeg',          //商户key
             'EncodingAESKey'=>'QApKTb1rJRwaJP92yWUGdA186WFQpZeg',          //商户key
         ),
