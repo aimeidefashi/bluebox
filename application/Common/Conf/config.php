@@ -94,13 +94,18 @@ $configs= array(
         	'__STATICS__' => __ROOT__.'/statics/',
             '__WEB_ROOT__'=>__ROOT__
         ),
+        
         'REDIS_HOST'=>'127.0.0.1',
         'REDIS_PORT'=>6379,
-        'WX_config'=>array(
+
+        'WX_CONFIG'=>array(
             'APP_ID' => 'wx69b4da6d9456214b',                       //公众号appid
             'APP_SECRET' => 'e506332ab51aac1a378772fbfc36febe',     //公众号secretkety           
             'MCH_ID'=>'1468612802',                                 //商户id
             'APP_KEY'=>'QApKTb1rJRwaJP92yWUGdA186WFQpZeg',          //商户key
+            'URL'=>'http://'. $_SERVER['HTTP_HOST'].'?g=Wxweb&c=Wechat&a=checkSignature',          //商户key
+            'TOKEN'=>'QApKTb1rJRwaJP92yWUGdA186WFQpZeg',          //商户key
+            'EncodingAESKey'=>'QApKTb1rJRwaJP92yWUGdA186WFQpZeg',          //商户key
         ),
 
 );
