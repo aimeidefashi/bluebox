@@ -96,6 +96,13 @@ $configs= array(
         ),
         'REDIS_HOST'=>'127.0.0.1',
         'REDIS_PORT'=>6379,
+        'WX_config'=>array(
+            'APP_ID' => 'wx69b4da6d9456214b',
+            'APP_SECRET' => '08e17146b99216be6fbb61b0895c959f',
+            'MCH_ID'=>'1468612802',
+            'APP_KEY'=>'',
+        ),
+
 );
 
 return  array_merge($configs,$db,$runtime_config);
