@@ -97,10 +97,10 @@ $configs= array(
         'REDIS_HOST'=>'127.0.0.1',
         'REDIS_PORT'=>6379,
         'WX_config'=>array(
-            'APP_ID' => 'wx69b4da6d9456214b',
-            'APP_SECRET' => '08e17146b99216be6fbb61b0895c959f',
-            'MCH_ID'=>'1468612802',
-            'APP_KEY'=>'',
+            'APP_ID' => 'wx69b4da6d9456214b',                       //公众号appid
+            'APP_SECRET' => 'e506332ab51aac1a378772fbfc36febe',     //公众号secretkety           
+            'MCH_ID'=>'1468612802',                                 //商户id
+            'APP_KEY'=>'QApKTb1rJRwaJP92yWUGdA186WFQpZeg',          //商户key
         ),
 
 );
