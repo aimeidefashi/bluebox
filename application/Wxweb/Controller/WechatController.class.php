@@ -1,7 +1,7 @@
 <?php
 
  
-namespace Api\Controller;
+namespace Wxweb\Controller;
 
 class WechatController extends \Think\Controller
 {
